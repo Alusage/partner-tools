@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+"access_res_partner_bank_group_portal","res_partner_bank group_portal","base.model_res_partner_bank","base.group_portal",1,0,0,0
+"access_res_bank_group_portal","res_bank group_portal","base.model_res_bank","base.group_portal",1,0,0,0
+"access_account_banking_mandate_group_portal","account_banking_mandate group_portal","account_banking_mandate.model_account_banking_mandate","base.group_portal",1,0,0,0

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_mandate" name="Mandate details">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">My mandate details</t>
+            <form action="/my/mandate/save" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <div class="row o_portal_details">
+                    <div class="col-lg-12">
+                        <br />
+                        <div t-if="success" class="alert alert-success py-1 mb-2">
+                            <i class="fa fa-fw fa-check-circle" /> Data saved! </div>
+                        <div t-if="error_message" role="alert" class="col-lg-12 alert alert-danger">
+                            <t t-foreach="error_message" t-as="err">
+                                <t t-out="err" />
+                                <br />
+                            </t>
+                        </div>
+                        <div class="row">
+                            <div id="reference"
+                                t-attf-class="form-group #{error.get('unique_mandate_reference') and 'o_has_error' or ''} col-xl-12">
+                                <label class="col-form-label" for="unique_mandate_reference">Reference : </label>
+                                <label class="text-danger"> *</label>
+                                <input t-if="can_edit_mandate" type="text" name="unique_mandate_reference"
+                                    required="True"
+                                    t-attf-class="form-control #{error.get('unique_mandate_reference') and 'is-invalid' or ''}"
+                                    t-att-value="unique_mandate_reference or mandate.unique_mandate_reference" />
+                                <span t-if="not can_edit_mandate" t-field="mandate.unique_mandate_reference" />
+                            </div>
+                            <div id="format"
+                            t-attf-class="form-group #{error.get('format') and 'o_has_error' or ''} col-xl-12">
+                            <label class="col-form-label" for="format">Format : </label>
+                            <label class="text-danger"> *</label>
+                            <input t-if="can_edit_mandate" type="text" name="format"
+                                required="True"
+                                t-attf-class="form-control #{error.get('format') and 'is-invalid' or ''}"
+                                t-att-value="format or mandate.format" />
+                            <span t-if="not can_edit_mandate" t-field="mandate.format" />
+                        </div>
+                        </div>
+
+                        <br />
+                        <input type="hidden" name="mandate_id" t-att-value="mandate_id" />
+                        <input type="hidden" name="redirect" t-att-value="redirect" />
+                        <div style="text-align:right;">
+                            <button type="submit"
+                                class="btn btn-primary ">Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div style="text-align:right">
+                <br />
+                <a href="/my/mandates">
+                    <span class="fa fa-arrow-left" /> Back to my mandates list </a>
+            </div>
+        </t>
+    </template>
+</odoo>

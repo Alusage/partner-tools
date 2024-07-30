@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.rule" id="res_partner_portal_members_bank_accounts_read_rule">
+        <field name="name">res_partner: portal: read access on my bank accounts</field>
+        <field name="model_id" ref="base.model_res_partner_bank" />
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+    <record model="ir.rule" id="res_partner_portal_bank_read_rule">
+        <field name="name">res_partner: portal: read access on my banks</field>
+        <field name="model_id" ref="base.model_res_bank" />
+        <!-- <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field> -->
+        <field name="groups" eval="[(4, ref('base.group_portal'))]" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+    <record model="ir.rule" id="res_partner_portal_mandate_read_rule">
+        <field name="name">res_partner: portal: read access on my mandates</field>
+        <field name="model_id" ref="account_banking_mandate.model_account_banking_mandate" />
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_bank_account" name="Bank account details">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">My bank account Details</t>
+            <form action="/my/bank_account/save" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <div class="row o_portal_details">
+                    <div class="col-lg-12">
+                        <br />
+                        <div t-if="success" class="alert alert-success py-1 mb-2">
+                            <i class="fa fa-fw fa-check-circle" /> Data saved! </div>
+                        <div t-if="error_message" role="alert" class="col-lg-12 alert alert-danger">
+                            <t t-foreach="error_message" t-as="err">
+                                <t t-out="err" />
+                                <br />
+                            </t>
+                        </div>
+                        <div class="row">
+                            <div id="iban"
+                                t-attf-class="form-group #{error.get('acc_number') and 'o_has_error' or ''} col-xl-12">
+                                <label class="col-form-label" for="acc_number">IBAN : </label>
+                                <label class="text-danger"> *</label>
+                                <input t-if="can_edit_bank_account" type="text" name="acc_number"
+                                    required="True"
+                                    t-attf-class="form-control #{error.get('acc_number') and 'is-invalid' or ''}"
+                                    t-att-value="acc_number or bank_account.acc_number" />
+                                <span t-if="not can_edit_bank_account" t-field="bank_account.acc_number" />
+                            </div>
+                            <div id="partner_id"
+                                t-attf-class="form-group #{error.get('bank_id') and 'o_has_error' or ''} col-xl-12">
+                                <label class="col-form-label" for="partner_id">Contact name: </label>
+                                <input t-if="can_edit_bank_account" type="text" name="partner_id"
+                                    required="False"
+                                    readonly="True"
+                                    t-attf-class="form-control #{error.get('bank_id') and 'is-invalid' or ''}"
+                                    t-att-value="partner_id or bank_account.partner_id.name" />
+                                <span t-if="not can_edit_bank_account" t-field="bank_account.partner_id.name" />
+                            </div>
+                            <div id="iban_holder_name_if_different"
+                                t-attf-class="form-group #{error.get('acc_holder_name') and 'o_has_error' or ''} col-xl-12">
+                                <label class="col-form-label" for="bank_id">Name of IBAN holder if different : </label>
+                                <input t-if="can_edit_bank_account" type="text" name="acc_holder_name"
+                                    required="False"
+                                    t-attf-class="form-control #{error.get('acc_holder_name') and 'is-invalid' or ''}"
+                                    t-att-value="acc_holder_name or bank_account.acc_holder_name" />
+                                <span t-if="not can_edit_bank_account" t-field="bank_account.acc_holder_name" />
+                            </div>
+                        </div>
+
+                        <br />
+                        <input type="hidden" name="bank_account_id" t-att-value="bank_account_id" />
+                        <input type="hidden" name="redirect" t-att-value="redirect" />
+                        <div style="text-align:right;">
+                            <button type="submit"
+                                class="btn btn-primary ">Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div style="text-align:right">
+                <br />
+                <a href="/my/bank_accounts">
+                    <span class="fa fa-arrow-left" /> Back to my bank accounts list </a>
+            </div>
+        </t>
+    </template>
+</odoo>

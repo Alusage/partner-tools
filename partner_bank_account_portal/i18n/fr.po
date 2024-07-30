@@ -1,0 +1,192 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_bank_account_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-05 13:58+0000\n"
+"PO-Revision-Date: 2024-08-05 13:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+msgid "1 registration"
+msgstr "1 enregistrement"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandate
+msgid "<i class=\"fa fa-fw fa-check-circle\"/> Data saved!"
+msgstr "Données enregistrées!"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+msgid "<span class=\"fa fa-arrow-left\"/> Back to my bank accounts list"
+msgstr "Retour à la liste des comptes bancaires"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandate
+msgid "<span class=\"fa fa-arrow-left\"/> Back to my mandates list"
+msgstr "Retour à la liste des mandats"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Associed IBAN"
+msgstr "IBAN associé"
+
+#. module: partner_bank_account_portal
+#: model:ir.model.fields,field_description:partner_bank_account_portal.field_account_setup_bank_manual_config__associated_mandate_count
+#: model:ir.model.fields,field_description:partner_bank_account_portal.field_res_partner_bank__associated_mandate_count
+msgid "Associated mandate count"
+msgstr "Décompte de mandats associés au compte bancaire"
+
+#. module: partner_bank_account_portal
+#: model:ir.model,name:partner_bank_account_portal.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Comptes bancaires"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_home_bank_accounts
+msgid "Bank accounts"
+msgstr "Comptes bancaires"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Contact name"
+msgstr "Nom du contact"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+msgid "Contact name:"
+msgstr "Nom du contact : "
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Format"
+msgstr ""
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandate
+msgid "Format :"
+msgstr ""
+
+#. module: partner_bank_account_portal
+#. odoo-python
+#: code:addons/partner_bank_account_portal/controllers/portal_my_bank_accounts.py:0
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+#, python-format
+msgid "IBAN"
+msgstr ""
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+msgid "IBAN :"
+msgstr ""
+
+#. module: partner_bank_account_portal
+#. odoo-python
+#: code:addons/partner_bank_account_portal/controllers/portal_my_bank_account.py:0
+#: code:addons/partner_bank_account_portal/controllers/portal_my_mandate.py:0
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr "Email invalide ! Entrez une adresse email valide."
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Last debit date"
+msgstr "Date du dernier débit"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_home_bank_accounts
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_home_menu_contract
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Mandates"
+msgstr "Mandats"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+msgid "My bank account Details"
+msgstr "Détails du compte bancaire"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandate
+msgid "My mandate details"
+msgstr "Details du mandat"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+msgid "Name of IBAN holder if different"
+msgstr "Nom du titulaire de l'IBAN si différent :"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+msgid "Name of IBAN holder if different :"
+msgstr "Nom du titulaire de l'IBAN si différent :"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+msgid "No registrations"
+msgstr "Pas d'enregistrement"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+msgid "Number of associated mandates"
+msgstr "Nombre de mandats associés"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Reference"
+msgstr "Référence"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandate
+msgid "Reference :"
+msgstr "Référence :"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_account
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandate
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Signature date"
+msgstr "Date de signature"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "Status"
+msgstr "Statut"
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+msgid "There are currently no bank accounts for your account."
+msgstr "Aucun compte bancaire n'est accessible depuis votre compte."
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_mandates
+msgid "There are currently no mandates for your account."
+msgstr "Aucun mandat n'est accessible depuis votre compte."
+
+#. module: partner_bank_account_portal
+#. odoo-python
+#: code:addons/partner_bank_account_portal/controllers/portal_my_bank_account.py:0
+#: code:addons/partner_bank_account_portal/controllers/portal_my_mandate.py:0
+#, python-format
+msgid "This public name is already used, please find an other idea."
+msgstr "Ce nom est déjà utilisé, veuillez trouver un autre nom."
+
+#. module: partner_bank_account_portal
+#: model_terms:ir.ui.view,arch_db:partner_bank_account_portal.portal_my_bank_accounts
+msgid "records"
+msgstr "enregistrements"

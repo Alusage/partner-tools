@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        id="portal_my_home_menu_contract"
+        name="Portal layout : Mandate menu entries"
+        inherit_id="portal.portal_breadcrumbs"
+        priority="35"
+    >
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li
+                t-if="page_name == 'Mandates'"
+                t-attf-class="breadcrumb-item #{'active ' if not contract else ''}"
+            >
+                <a
+                    t-if="mandate"
+                    t-attf-href="/my/mandates?{{ keep_query() }}"
+                >Mandates</a>
+                <t t-else="">Mandates</t>
+            </li>
+            <li t-if="mandate" class="breadcrumb-item active">
+                <t t-esc="mandate.reference" />
+            </li>
+        </xpath>
+    </template>
+    <template id="portal_my_home_bank_accounts" name="Bank accounts"
+        inherit_id="portal.portal_my_home" customize_show="True" priority="100">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Bank accounts</t>
+                <t t-set="url" t-value="'/my/bank_accounts'" />
+                <t t-set="placeholder_count" t-value="'bank_account_count'" />
+            </t>
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Mandates</t>
+                <t t-set="url" t-value="'/my/mandates'" />
+                <t t-set="placeholder_count" t-value="'mandate_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
