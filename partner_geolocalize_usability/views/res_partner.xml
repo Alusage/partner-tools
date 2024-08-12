@@ -1,36 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="geolocata_partner_action_server" model="ir.actions.server">
-    <field name="name">Geolocate</field>
-    <field name="model_id" ref="model_res_partner" />
-    <field
-      name="binding_model_id" ref="model_res_partner" />
-    <field name="state">code</field>
-    <field name="code">records.geo_localize() </field>
-  </record>
-
-  <record model="ir.ui.view" id="partner_geolocalize_form_view">
-    <field name="name">partner.geolocalize.form</field>
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="base.view_partner_form" />
-    <field name='priority'>99</field>
-    <field name="arch" type="xml">
-      <xpath expr="//page[@name='geo_location']" position="replace">
-        <page name="geolocalize" string="Geolocation">
-          <group colspan="2" col="2">
-            <separator string="Geolocation" colspan="2" />
-            <field name="manual_geolocate" />
-            <button
-              string="Geolocate"
-              name="geo_localize"
-              colspan="2"
-              icon="fa-check"
-              type="object" attrs="{'invisible':[('manual_geolocate', '=', True)]}" />
-            <field name="partner_latitude" attrs="{'readonly':[('manual_geolocate', '=', False)]}" />
-            <field name="partner_longitude" attrs="{'readonly':[('manual_geolocate', '=', False)]}" />
-          </group>
-        </page>
-      </xpath>
-    </field>
-  </record>
+    <record id="geolocata_partner_action_server" model="ir.actions.server">
+        <field name="name">Geolocate</field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="binding_model_id" ref="model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">records.geo_localize()</field>
+    </record>
+    <record id="partner_geolocalize_form_view" model="ir.ui.view">
+        <field name="name">partner.geolocalize.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='geo_location']" position="replace">
+                <page name="geolocalize" string="Geolocation">
+                    <group col="2" colspan="2">
+                        <separator colspan="2" string="Geolocation"/>
+                        <field name="manual_geolocate"/>
+                        <button colspan="2" icon="fa-check" invisible="manual_geolocate == True" name="geo_localize" string="Geolocate" type="object"/>
+                        <field name="partner_latitude" readonly="manual_geolocate == False"/>
+                        <field name="partner_longitude" readonly="manual_geolocate == False"/>
+                    </group>
+                </page>
+            </xpath></field>
+    </record>
 </odoo>

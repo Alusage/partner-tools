@@ -3,7 +3,7 @@
 
 {
     "name": "partner_geolocalize_usability",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
     "maintainer": "Stéphan Sainléger",
@@ -11,10 +11,7 @@
     "category": "Tools",
     "summary": "Brings several enhancements on geolocalize functionnalities",
     # any module necessary for this one to work correctly
-    "depends": [
-        "base",
-        "base_geolocalize"
-    ],
+    "depends": ["base", "base_geolocalize"],
     "qweb": [],
     "external_dependencies": {
         "python": [],

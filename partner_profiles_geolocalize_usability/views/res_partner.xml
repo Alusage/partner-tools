@@ -1,24 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record model="ir.ui.view" id="partner_geolocalize_form_view_public">
-    <field name="name">partner.gogocarto.form.public</field>
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="partner_profiles.partner_profiles_form_view" />
-    <field name='priority'>99</field>
-    <field name="arch" type="xml">
-      <xpath expr="//group[@id='public_data']" position="after">
-        <group attrs="{'invisible':[('is_public_profile', '=', False)]}">
-          <field name="manual_geolocate" />
-          <button
-            string="Geolocate"
-            name="geo_localize"
-            colspan="2"
-            icon="fa-check"
-            type="object" attrs="{'invisible':[('manual_geolocate', '=', True)]}" />
-          <field name="partner_latitude" attrs="{'readonly':[('manual_geolocate', '=', False)]}" />
-          <field name="partner_longitude" attrs="{'readonly':[('manual_geolocate', '=', False)]}" />
-        </group>
-      </xpath>
-    </field>
-  </record>
+    <record id="partner_geolocalize_form_view_public" model="ir.ui.view">
+        <field name="name">partner.gogocarto.form.public</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_profiles.partner_profiles_form_view"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='public_data']" position="after">
+                <group invisible="is_public_profile == False">
+                    <field name="manual_geolocate"/>
+                    <button colspan="2" icon="fa-check" invisible="manual_geolocate == True" name="geo_localize" string="Geolocate" type="object"/>
+                    <field name="partner_latitude" readonly="manual_geolocate == False"/>
+                    <field name="partner_longitude" readonly="manual_geolocate == False"/>
+                </group>
+            </xpath></field>
+    </record>
 </odoo>

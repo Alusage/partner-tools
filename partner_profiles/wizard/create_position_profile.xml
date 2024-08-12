@@ -7,38 +7,38 @@
             <form string="Create a position profile">
                 <sheet>
                     <div class="alert alert-info" role="alert" style="margin-bottom:0px;">
-                        <span>You are about to create a <strong>Position Profile</strong> which
-                            represents the role or the job of a person in a structure.</span>
+                        <span>
+                            You are about to create a
+                            <strong>
+                                Position Profile
+                            </strong>
+                            which
+                            represents the role or the job of a person in a structure.
+                        </span>
                     </div>
                     <group>
-                        <field name="is_company" invisible="1" />
-                        <field name="structure_id"
-                            attrs="{'readonly': [('is_company','=',True)], 'required': [('is_company','=',False)]}" />
-                        <field name="partner_id"
-                            attrs="{'readonly': [('is_company','=',False)], 'required': [('is_company','=',True)]}" />
-                        <field name="function" />
-                        <field name="email" />
-                        <field name="phone" />
-                        <field name="comment" />
+                        <field invisible="1" name="is_company"/>
+                        <field name="structure_id" readonly="is_company == True" required="is_company == False"/>
+                        <field name="partner_id" readonly="is_company == False" required="is_company == True"/>
+                        <field name="function"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="comment"/>
                     </group>
                 </sheet>
                 <footer>
-                    <button string="Create" name="create_position_profile" type="object"
-                        class="btn-primary" />
-                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                    <button class="btn-primary" name="create_position_profile" string="Create" type="object"/>
+                    <button class="btn-secondary" special="cancel" string="Cancel"/>
                 </footer>
-            </form>
-        </field>
+            </form></field>
     </record>
-
     <record id="action_create_position_profile_wizard" model="ir.actions.act_window">
         <field name="name">Create Position Profile</field>
         <field name="res_model">create.position.profile</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="create_position_wizard_view_form" />
+        <field name="view_id" ref="create_position_wizard_view_form"/>
         <field name="target">new</field>
     </record>
-
     <record id="action_create_position_profile_wizard" model="ir.actions.act_window">
         <field name="name">Create Position Profile</field>
         <field name="res_model">create.position.profile</field>
@@ -46,5 +46,4 @@
         <field name="binding_view_types">list</field>
         <field name="view_mode">form</field>
     </record>
-
 </odoo>
